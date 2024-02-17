@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weather-for-trip/static/css/main.839877b6.css",
-    "main.js": "/weather-for-trip/static/js/main.84fe081d.js",
+    "main.js": "/weather-for-trip/static/js/main.483189a5.js",
     "static/media/sky.jpg": "/weather-for-trip/static/media/sky.6cc1a2bd563d9798bb47.jpg",
     "static/media/partly-cloudy-night.svg": "/weather-for-trip/static/media/partly-cloudy-night.83ba7520c3522cd2f6fd1e1abf265116.svg",
     "static/media/wind.svg": "/weather-for-trip/static/media/wind.45b1e540c1289c523b793e809fe21e5d.svg",
@@ -14,10 +14,10 @@
     "static/media/fog.svg": "/weather-for-trip/static/media/fog.76b4eff06284bf7d74c2ac54129de093.svg",
     "index.html": "/weather-for-trip/index.html",
     "main.839877b6.css.map": "/weather-for-trip/static/css/main.839877b6.css.map",
-    "main.84fe081d.js.map": "/weather-for-trip/static/js/main.84fe081d.js.map"
+    "main.483189a5.js.map": "/weather-for-trip/static/js/main.483189a5.js.map"
   },
   "entrypoints": [
     "static/css/main.839877b6.css",
-    "static/js/main.84fe081d.js"
+    "static/js/main.483189a5.js"
   ]
 }
