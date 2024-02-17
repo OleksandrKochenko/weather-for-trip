@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/weather-for-trip/static/css/main.839877b6.css",
-    "main.js": "/weather-for-trip/static/js/main.0b0e3187.js",
-    "static/media/sky.jpg": "/weather-for-trip/static/media/sky.6cc1a2bd563d9798bb47.jpg",
-    "static/media/partly-cloudy-night.svg": "/weather-for-trip/static/media/partly-cloudy-night.83ba7520c3522cd2f6fd1e1abf265116.svg",
-    "static/media/wind.svg": "/weather-for-trip/static/media/wind.45b1e540c1289c523b793e809fe21e5d.svg",
-    "static/media/cloudy.svg": "/weather-for-trip/static/media/cloudy.79dafa2057cafb63b68842a0ff5e0ff0.svg",
-    "static/media/partly-cloudy-day.svg": "/weather-for-trip/static/media/partly-cloudy-day.d476ae447dcb2c148f648a692a631ed8.svg",
-    "static/media/clear-day.svg": "/weather-for-trip/static/media/clear-day.68d00b9d171d29a11ee491fef13b4ccb.svg",
-    "static/media/snow.svg": "/weather-for-trip/static/media/snow.8fa468b2156408ddf9319a9b4bf7dabc.svg",
-    "static/media/rain.svg": "/weather-for-trip/static/media/rain.26d90e3f25710e77e47ecf118fb19a36.svg",
-    "static/media/clear-night.svg": "/weather-for-trip/static/media/clear-night.69bbf35ea9ac2c829c1e859141b3f208.svg",
-    "static/media/fog.svg": "/weather-for-trip/static/media/fog.76b4eff06284bf7d74c2ac54129de093.svg",
-    "index.html": "/weather-for-trip/index.html",
-    "main.839877b6.css.map": "/weather-for-trip/static/css/main.839877b6.css.map",
-    "main.0b0e3187.js.map": "/weather-for-trip/static/js/main.0b0e3187.js.map"
+    "main.css": "/static/css/main.e67e79a3.css",
+    "main.js": "/static/js/main.cf86a27f.js",
+    "static/media/sky.jpg": "/static/media/sky.6cc1a2bd563d9798bb47.jpg",
+    "static/media/partly-cloudy-night.svg": "/static/media/partly-cloudy-night.83ba7520c3522cd2f6fd1e1abf265116.svg",
+    "static/media/wind.svg": "/static/media/wind.45b1e540c1289c523b793e809fe21e5d.svg",
+    "static/media/cloudy.svg": "/static/media/cloudy.79dafa2057cafb63b68842a0ff5e0ff0.svg",
+    "static/media/partly-cloudy-day.svg": "/static/media/partly-cloudy-day.d476ae447dcb2c148f648a692a631ed8.svg",
+    "static/media/clear-day.svg": "/static/media/clear-day.68d00b9d171d29a11ee491fef13b4ccb.svg",
+    "static/media/snow.svg": "/static/media/snow.8fa468b2156408ddf9319a9b4bf7dabc.svg",
+    "static/media/rain.svg": "/static/media/rain.26d90e3f25710e77e47ecf118fb19a36.svg",
+    "static/media/clear-night.svg": "/static/media/clear-night.69bbf35ea9ac2c829c1e859141b3f208.svg",
+    "static/media/fog.svg": "/static/media/fog.76b4eff06284bf7d74c2ac54129de093.svg",
+    "index.html": "/index.html",
+    "main.e67e79a3.css.map": "/static/css/main.e67e79a3.css.map",
+    "main.cf86a27f.js.map": "/static/js/main.cf86a27f.js.map"
   },
   "entrypoints": [
-    "static/css/main.839877b6.css",
-    "static/js/main.0b0e3187.js"
+    "static/css/main.e67e79a3.css",
+    "static/js/main.cf86a27f.js"
   ]
 }
