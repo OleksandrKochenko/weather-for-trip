@@ -16,7 +16,7 @@ export const App = () => {
   //const [filter, setFilter] = useState('');
   const [active, setActive] = useState(getCurrentTrip);
   const [dayForecast, setDayForecast] = useState(null);
-  console.log(setTripList);
+  console.log('remove me', setTripList);
 
   useEffect(() => {
     const { name, iso2 } = active;
