@@ -2,7 +2,7 @@
   "name": "weather-for-trip",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OleksandrKochenko.github.io/weather-for-trip/",
+  "homepage": "https://weather-for-trip.vercel.app/",
   "author": "Oleksandr Kochenko",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
