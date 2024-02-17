@@ -12,10 +12,11 @@ export const App = () => {
     JSON.parse(localStorage.getItem('currentTrip')) ?? tripList[0];
 
   const [tripList, setTripList] = useState(getPersistedTrips);
-  const [sortByDate, setSortByDate] = useState(false);
-  const [filter, setFilter] = useState('');
+  //const [sortByDate, setSortByDate] = useState(false);
+  //const [filter, setFilter] = useState('');
   const [active, setActive] = useState(getCurrentTrip);
   const [dayForecast, setDayForecast] = useState(null);
+  console.log(setTripList);
 
   useEffect(() => {
     const { name, iso2 } = active;
