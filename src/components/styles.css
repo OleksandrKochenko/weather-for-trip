@@ -1,0 +1,83 @@
+.home_page {
+  display: flex;
+}
+.main_section {
+  flex-grow: 1;
+}
+.day_weather_section {
+  background-image: url('../img/sky.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 576px;
+  width: 324px;
+  position: relative;
+}
+.day_weather {
+  position: absolute;
+  width: 200px;
+  left: calc(50% - 100px);
+  bottom: 40%;
+  text-align: center;
+  color: #fff;
+}
+.day_name {
+  font-size: 26px;
+  font-weight: 600;
+}
+.day_forecast_icon {
+  width: 80px;
+  height: 80px;
+}
+.weather_data {
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather_city_name {
+  font-size: 26px;
+}
+.weather_temp {
+  font-size: 58px;
+}
+.celsius {
+  align-self: flex-start;
+  padding-top: 6px;
+  font-size: 30px;
+}
+.trip_list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.trip_item {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  border: 2px solid transparent;
+}
+.trip_item:hover {
+  cursor: pointer;
+}
+.active {
+  border: 2px solid lightskyblue;
+}
+.city_image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.city_name,
+.city_period {
+  margin: 10px;
+}
+.city_name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.city_period {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 0;
+}
