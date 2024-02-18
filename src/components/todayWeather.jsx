@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchDayForecast } from 'services/api';
 import { weatherIconsInverted } from 'data/weather.icons';
+import { Countdown } from './countdown';
 import './styles.css';
 
 export const TodayWeather = ({ city }) => {
@@ -41,6 +42,7 @@ export const TodayWeather = ({ city }) => {
         )}
         <p className="weather_city_name">{city.name}</p>
       </div>
+      <Countdown date={city.date_start} />
     </div>
   );
 };
