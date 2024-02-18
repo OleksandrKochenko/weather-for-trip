@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { tripsInitial } from 'data/trips.initial';
+import { addNewTrip } from 'services/api';
 import { TripList } from './trip.list';
 import { TodayWeather } from './todayWeather';
 import { PeriodWeather } from './periodWeather';
@@ -18,7 +19,13 @@ export const App = () => {
   //const [filter, setFilter] = useState('');
   const [current, setCurrent] = useState(getCurrentTrip);
   const [modalOpen, setModalOpen] = useState(false);
-  //console.log('delete me', setTripList);
+
+  const addTrip = data => {
+    const newTrip = addNewTrip(data);
+    setTripList(list => [...list, newTrip]);
+    localStorage.setItem('tripList', JSON.stringify([...tripList, newTrip]));
+    setModalOpen(false);
+  };
 
   return (
     <div className="home_page">
@@ -29,7 +36,11 @@ export const App = () => {
       <AddBtn openModal={() => setModalOpen(true)} />
       <TodayWeather city={current} />
       {modalOpen && (
-        <Modal title="Create trip" onClose={() => setModalOpen(false)} />
+        <Modal
+          title="Create trip"
+          onClose={() => setModalOpen(false)}
+          onSubmit={addTrip}
+        />
       )}
     </div>
   );
