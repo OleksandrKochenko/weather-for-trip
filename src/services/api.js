@@ -16,3 +16,9 @@ export const fetchDayForecast = async query => {
   const res = await axios.get(`${name},${iso2}/today/`);
   return res.data;
 };
+
+export const fetchPeriodForecast = async query => {
+  const { name, iso2, date_start, date_end } = query;
+  const res = await axios.get(`${name},${iso2}/${date_start}/${date_end}/`);
+  return res.data;
+};

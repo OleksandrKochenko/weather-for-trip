@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { fetchDayForecast } from 'services/api';
+import { useState } from 'react';
 import { tripsInitial } from 'data/trips.initial';
 import { TripList } from './trip.list';
 import { TodayWeather } from './todayWeather';
-import './styles.css';
+import { PeriodWeather } from './periodWeather';
 import { AddBtn } from './add.btn';
 import { Modal } from './modal';
+import './styles.css';
 
 export const App = () => {
   const getPersistedTrips = () =>
@@ -16,32 +16,18 @@ export const App = () => {
   const [tripList, setTripList] = useState(getPersistedTrips);
   //const [sortByDate, setSortByDate] = useState(false);
   //const [filter, setFilter] = useState('');
-  const [active, setActive] = useState(getCurrentTrip);
-  const [dayForecast, setDayForecast] = useState(null);
+  const [current, setCurrent] = useState(getCurrentTrip);
   const [modalOpen, setModalOpen] = useState(false);
-  console.log('delete me', setTripList);
-
-  useEffect(() => {
-    const { name, iso2 } = active;
-
-    async function fetchData() {
-      const { days } = await fetchDayForecast({ name, iso2 });
-      setDayForecast({
-        temp: days[0].temp,
-        icon: days[0].icon,
-        today: new Date().toLocaleDateString('en-EN', { weekday: 'long' }),
-      });
-    }
-    setTimeout(fetchData);
-  }, [active]);
+  //console.log('delete me', setTripList);
 
   return (
     <div className="home_page">
       <div className="main_section">
-        <TripList tripList={tripList} active={active} setActive={setActive} />
+        <TripList tripList={tripList} active={current} setActive={setCurrent} />
+        <PeriodWeather city={current} />
       </div>
       <AddBtn openModal={() => setModalOpen(true)} />
-      <TodayWeather city={active} forecast={dayForecast} />
+      <TodayWeather city={current} />
       {modalOpen && (
         <Modal title="Create trip" onClose={() => setModalOpen(false)} />
       )}

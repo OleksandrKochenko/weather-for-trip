@@ -3,6 +3,33 @@
 }
 .main_section {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 60%;
+}
+.forecast_title {
+  margin: 30px 0;
+}
+.forecast_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.forecast_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.forecast_dayname {
+  opacity: 0.6;
+}
+.forecast_icon {
+  width: 60px;
+  height: 60px;
 }
 .day_weather_section {
   background-image: url('../img/sky.jpg');
@@ -149,7 +176,6 @@
 }
 .close_btn:hover {
   cursor: pointer;
-  transform: translate(1px, 1px);
 }
 .cancel_btn,
 .save_btn {
