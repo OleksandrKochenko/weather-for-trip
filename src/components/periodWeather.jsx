@@ -32,7 +32,7 @@ export const PeriodWeather = ({ city }) => {
   return (
     <div>
       <h3 className="forecast_title">Week</h3>
-      {periodForecast && (
+      {periodForecast ? (
         <ul className="forecast_list">
           {periodForecast.map((day, idx) => (
             <li className="forecast_item" key={idx}>
@@ -48,6 +48,8 @@ export const PeriodWeather = ({ city }) => {
             </li>
           ))}
         </ul>
+      ) : (
+        <h2>Inspect console. Probably '429. Too Many Requests'</h2>
       )}
     </div>
   );
