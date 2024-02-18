@@ -4,6 +4,8 @@ import { tripsInitial } from 'data/trips.initial';
 import { TripList } from './trip.list';
 import { TodayWeather } from './todayWeather';
 import './styles.css';
+import { AddBtn } from './add.btn';
+import { Modal } from './modal';
 
 export const App = () => {
   const getPersistedTrips = () =>
@@ -16,6 +18,7 @@ export const App = () => {
   //const [filter, setFilter] = useState('');
   const [active, setActive] = useState(getCurrentTrip);
   const [dayForecast, setDayForecast] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
   console.log('delete me', setTripList);
 
   useEffect(() => {
@@ -37,7 +40,11 @@ export const App = () => {
       <div className="main_section">
         <TripList tripList={tripList} active={active} setActive={setActive} />
       </div>
+      <AddBtn openModal={() => setModalOpen(true)} />
       <TodayWeather city={active} forecast={dayForecast} />
+      {modalOpen && (
+        <Modal title="Create trip" onClose={() => setModalOpen(false)} />
+      )}
     </div>
   );
 };

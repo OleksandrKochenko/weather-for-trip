@@ -9,8 +9,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 576px;
-  width: 324px;
+  height: 624px;
+  width: 351px;
   position: relative;
 }
 .day_weather {
@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 .active {
-  border: 2px solid lightskyblue;
+  border: 2px solid deepskyblue;
 }
 .city_image {
   width: 200px;
@@ -80,4 +80,94 @@
   font-size: 13px;
   opacity: 0.7;
   margin-top: 0;
+}
+.add_btn {
+  width: 200px;
+  height: 150px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+.add_btn:hover {
+  cursor: pointer;
+}
+.add_btn_plus {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+.modal_window {
+  max-width: calc(100vw - 480px);
+  max-height: calc(100vh - 24px);
+  min-width: 400px;
+  min-height: 500px;
+  background-color: #fff;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 3px 3px 20px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 20px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 20px -5px rgba(0, 0, 0, 0.75);
+}
+.modal_title {
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid rgb(230, 227, 227);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal_body {
+  flex-grow: 1;
+  padding: 20px;
+}
+.modal_controls {
+  height: 64px;
+  border-top: 1px solid rgb(230, 227, 227);
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.close_btn:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
+}
+.cancel_btn,
+.save_btn {
+  width: 70px;
+  height: 30px;
+  margin-left: 10px;
+  border: 1px solid rgb(230, 227, 227);
+  border-radius: 2px;
+
+  background-color: #fff;
+}
+.save_btn {
+  background-color: deepskyblue;
+  color: #fff;
+  border: none;
+}
+.cancel_btn:hover,
+.save_btn:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
 }
