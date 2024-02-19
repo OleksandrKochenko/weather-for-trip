@@ -14,8 +14,13 @@
 .forecast_list {
   display: flex;
   flex-wrap: nowrap;
-  width: 80%;
-  overflow: hidden;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  flex-grow: 1;
+  scroll-behavior: smooth;
+  position: relative;
+  padding-left: 13px;
 }
 .forecast_item {
   display: flex;
@@ -296,12 +301,15 @@ input:focus::placeholder {
 .disabled {
   opacity: 0.5;
 }
-.scroll_wraper {
+.scroll_wraper,
+.scroll_forecast_wraper {
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
-  flex-grow: 1;
   scroll-behavior: smooth;
+}
+.scroll_forecast_wraper {
+  width: 80%;
 }
 .scroll_btn {
   height: 36px;
@@ -326,4 +334,7 @@ input:focus::placeholder {
 .scroll_btn:hover {
   cursor: pointer;
   transform: translate(0.5px, 0.5px);
+}
+.scroll_btn.forecast {
+  top: 30px;
 }
