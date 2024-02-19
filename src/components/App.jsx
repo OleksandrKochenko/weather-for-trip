@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { tripsInitial } from 'data/trips.initial';
 import { addNewTrip } from 'services/api';
 import { TripList } from './trip.list';
+import { ListControls } from './list.controls';
 import { TodayWeather } from './todayWeather';
 import { PeriodWeather } from './periodWeather';
-import { AddBtn } from './add.btn';
 import { Modal } from './modal';
 import './styles.css';
 
@@ -15,10 +15,18 @@ export const App = () => {
     JSON.parse(localStorage.getItem('currentTrip')) ?? tripList[0];
 
   const [tripList, setTripList] = useState(getPersistedTrips);
-  //const [sortByDate, setSortByDate] = useState(false);
-  //const [filter, setFilter] = useState('');
+  const [sort, setSort] = useState('');
+  const [filter, setFilter] = useState('');
   const [current, setCurrent] = useState(getCurrentTrip);
   const [modalOpen, setModalOpen] = useState(false);
+
+  const filterChange = e => {
+    setFilter(e.currentTarget.value);
+  };
+
+  const filtredTrips = tripList.filter(trip =>
+    trip.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   const addTrip = data => {
     const newTrip = addNewTrip(data);
@@ -27,13 +35,36 @@ export const App = () => {
     setModalOpen(false);
   };
 
+  const sortedTrips =
+    sort === '' || sort === 'default'
+      ? filtredTrips
+      : [...filtredTrips].sort((a, b) => {
+          if (a[sort] > b[sort]) {
+            return 1;
+          }
+          if (a[sort] < b[sort]) {
+            return -1;
+          }
+          return 0;
+        });
+
   return (
     <div className="home_page">
       <div className="main_section">
-        <TripList tripList={tripList} active={current} setActive={setCurrent} />
+        <ListControls
+          filterValue={filter}
+          onFilterChange={filterChange}
+          sortValue={sort}
+          onSortChange={setSort}
+        />
+        <TripList
+          tripList={sortedTrips}
+          active={current}
+          setActive={setCurrent}
+          openModal={() => setModalOpen(true)}
+        />
         <PeriodWeather city={current} />
       </div>
-      <AddBtn openModal={() => setModalOpen(true)} />
       <TodayWeather city={current} />
       {modalOpen && (
         <Modal

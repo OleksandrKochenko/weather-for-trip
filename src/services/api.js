@@ -26,8 +26,8 @@ export const fetchPeriodForecast = async query => {
 
 export const addNewTrip = data => {
   const cityIdx = cities.findIndex(el => el.id === data.selected);
-  const date_start = data.dateStart.toISOString();
-  const date_end = data.dateEnd.toISOString();
+  const date_start = data.dateStart.toLocaleDateString('en-CA');
+  const date_end = data.dateEnd.toLocaleDateString('en-CA');
 
   const newTrip = {
     name: cities[cityIdx].name,
@@ -37,8 +37,8 @@ export const addNewTrip = data => {
       Math.floor(Math.random() * 0xffffff).toString(16),
     iso2: cities[cityIdx].iso2,
     img: cities[cityIdx].img,
-    date_start: date_start.slice(0, date_start.indexOf('T')),
-    date_end: date_end.slice(0, date_start.indexOf('T')),
+    date_start,
+    date_end,
   };
 
   return newTrip;
