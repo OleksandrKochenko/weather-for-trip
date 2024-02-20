@@ -20,7 +20,19 @@ export const fetchDayForecast = async query => {
 
 export const fetchPeriodForecast = async query => {
   const { name, iso2, date_start, date_end } = query;
-  const res = await axios.get(`${name},${iso2}/${date_start}/${date_end}/`);
+  const dayInMs = 86400000;
+  const weekInMs = dayInMs * 7;
+  const startAsDate = new Date(date_start.replace('-', '.'));
+  const endAsDate = new Date(date_end.replace('-', '.'));
+  const tripPeriodInMs = endAsDate - startAsDate;
+  const endOfWeek = new Date(
+    startAsDate.getTime() + weekInMs
+  ).toLocaleDateString('en-CA');
+  const res = await axios.get(
+    `${name},${iso2}/${date_start}/${
+      tripPeriodInMs > weekInMs ? endOfWeek : date_end
+    }/`
+  );
   return res.data;
 };
 

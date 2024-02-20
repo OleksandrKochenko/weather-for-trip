@@ -51,6 +51,9 @@ export const App = () => {
   return (
     <div className="home_page">
       <div className="main_section">
+        <h1 className="heading">
+          <span className="heading_span">Weather</span> Forecast
+        </h1>
         <ListControls
           filterValue={filter}
           onFilterChange={filterChange}
