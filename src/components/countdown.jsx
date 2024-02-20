@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './styles.css';
 import { getRemainingTime } from 'services/count';
+import './styles.css';
 
 export const Countdown = ({ date }) => {
   const dateStart = new Date(date.replace('-', '.')).getTime();
